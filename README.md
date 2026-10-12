@@ -58,6 +58,10 @@ autoři (viz soubor `AUTHORS`). Výukový materiál je pod licencí
 11. **Notebooky pro lektory:** z epizod jsem vytvořila Jupyter notebooky (složka `notebooks/`)
     pro lektory, kteří chtějí učit přímo z JupyterLabu. Obrázky jsou v nich vložené, takže
     fungují bez internetu i bez webu lekce.
+12. **České rozhraní webu:** Workbench český překlad nemá, tak jsem ho napsala a přidala
+    do svého forku balíčku `sandpaper` (<https://github.com/Kharianne/sandpaper>).
+    Česky je tak i navigace, popisky boxů (_Cvičení_, _Poznámka_, _Ukázat řešení_…)
+    a patička.
 
 ## Struktura
 
@@ -106,6 +110,12 @@ systémech je stejný, jen R a pandoc se instalují jinak.
 
    ```bash
    Rscript -e 'install.packages(c("sandpaper", "varnish", "pegboard", "tinkr"), repos = c(carpentries = "https://carpentries.r-universe.dev/", CRAN = "https://cloud.r-project.org"))'
+   ```
+
+   Aby bylo rozhraní webu česky, nainstalujte pak `sandpaper` z forku s překladem:
+
+   ```bash
+   Rscript -e 'install.packages("remotes", repos = "https://cloud.r-project.org"); remotes::install_github("Kharianne/sandpaper")'
    ```
 
 3. Složka s lekcí musí být git repozitář, jinak sestavení spadne s chybou
@@ -181,15 +191,16 @@ potřeba nejsou.
 
 ## Známá omezení
 
-- **Rozhraní webu je anglicky.** Workbench zatím nemá český překlad navigace a popisků
-  (umí en, de, es, fr, it, ja, uk), takže texty jako _Key Points_, _Challenge_ nebo _Next_
-  zůstávají anglicky. Lekce má nastavené `lang: cs`, takže kdyby český překlad do balíčku
-  `sandpaper` někdy přibyl, použije se sám.
+- **České rozhraní je z forku.** Workbench sám umí jen en, de, es, fr, it, ja a uk.
+  Český překlad je proto v mém forku balíčku `sandpaper` a lekce ho používá díky řádku
+  `sandpaper: 'Kharianne/sandpaper'` v `config.yaml`. Když The Carpentries vydají novou
+  verzi, je potřeba fork synchronizovat (_Sync fork_ na GitHubu). Kdyby čeština přibyla
+  přímo do `sandpaper`, stačí ten řádek z `config.yaml` smazat.
 - **Snímky obrazovky** ukazují anglické rozhraní JupyterLabu (to je výchozí).
 - **Logo:** Workbench oficiálně zná jen loga The Carpentries a na vlastní logo je potřeba fork
   balíčku `varnish`. Tahle lekce to obchází nastavením `carpentry: '../../fig/kurz'`, takže se
   logo načte ze souborů `episodes/fig/kurz-logo.svg` a `kurz-logo-sm.svg`. Kdyby to nějaká
   budoucí verze Workbench rozbila, zobrazí se v záhlaví jen alternativní text. Čisté řešení
   popisuje [dokumentace Workbench](https://carpentries.github.io/sandpaper-docs/editing.html).
-- **Fáze vývoje _beta_** přidává do záhlaví anglický štítek. Až lekci vyzkoušíte ve výuce,
-  můžete v `config.yaml` nastavit `life_cycle: 'stable'`.
+- **Fáze vývoje _beta_** přidává do záhlaví štítek, že je lekce ve vývoji. Až lekci
+  vyzkoušíte ve výuce, můžete v `config.yaml` nastavit `life_cycle: 'stable'`.

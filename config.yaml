@@ -24,7 +24,7 @@ created: '2026-10-11'
 keywords: 'Python, programování, JupyterLab, začátečníci, výuka, čeština'
 
 # Fáze vývoje lekce: pre-alpha, alpha, beta, stable, retired
-# Pro 'alpha' a 'beta' se nahoře zobrazuje (anglický) informační pruh.
+# Pro 'alpha' a 'beta' se nahoře zobrazuje informační pruh.
 life_cycle: 'beta'
 
 # Licence výukového materiálu
@@ -59,6 +59,10 @@ profiles:
 
 # Přizpůsobení -----------------------------------------------
 
-# Jazyk stránek. Workbench zatím nemá český překlad svého rozhraní,
-# takže navigace a popisky boxů zůstanou anglicky (viz README.md).
+# Jazyk stránek
 lang: cs
+
+# Workbench sám český překlad rozhraní nemá. Při sestavení na GitHubu se proto
+# balíček sandpaper nainstaluje z forku, který překlad obsahuje (navigace,
+# popisky boxů, patička). Viz README.md.
+sandpaper: 'Kharianne/sandpaper'
