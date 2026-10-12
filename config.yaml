@@ -1,0 +1,64 @@
+#------------------------------------------------------------
+# Nastavení lekce (Carpentries Workbench / sandpaper)
+#------------------------------------------------------------
+
+# Značka lekce. Hodnoty 'swc', 'dc', 'lc', 'cp', 'incubator' a 'lab' patří
+# The Carpentries a zobrazují jejich chráněná loga (ochranné známky), proto je
+# tato adaptace nepoužívá.
+# Workbench hledá logo na adrese assets/images/<carpentry>-logo.svg. Hodnota níže
+# tuto cestu přesměruje do složky fig/, kam se při sestavení kopíruje obsah
+# episodes/fig/. Použije se tedy episodes/fig/kurz-logo.svg (velké logo)
+# a episodes/fig/kurz-logo-sm.svg (malé logo). Podrobnosti v README.md.
+carpentry: '../../fig/kurz'
+
+# Alternativní text loga
+carpentry_description: 'Python pro začátečníky'
+
+# Název lekce (zobrazuje se na všech stránkách)
+title: 'Python pro začátečníky: první kroky'
+
+# Datum vzniku této adaptace (původní lekce vznikla 2016-01-07)
+created: '2026-10-11'
+
+# Klíčová slova oddělená čárkou
+keywords: 'Python, programování, JupyterLab, začátečníci, výuka, čeština'
+
+# Fáze vývoje lekce: pre-alpha, alpha, beta, stable, retired
+# Pro 'alpha' a 'beta' se nahoře zobrazuje (anglický) informační pruh.
+life_cycle: 'beta'
+
+# Licence výukového materiálu
+license: 'CC-BY 4.0'
+
+# Odkaz na zdrojový repozitář této lekce
+source: 'https://github.com/Kharianne/python-novice-gapminder-cs'
+
+# Výchozí větev
+branch: 'main'
+
+# Navigace ---------------------------------------------------
+
+# Pořadí epizod
+episodes:
+- 01-run-quit.md
+- 02-variables.md
+- 03-types-conversion.md
+
+# Stránky pro studující
+learners:
+- setup.md
+- reference.md
+
+# Stránky pro lektory
+instructors:
+- instructor-notes.md
+
+# Profily studujících
+profiles:
+- learner-profiles.md
+
+# Přizpůsobení -----------------------------------------------
+
+# Jazyk stránek. Workbench zatím nemá český překlad svého rozhraní,
+# takže navigace a popisky boxů zůstanou anglicky (viz README.md).
+lang: cs
